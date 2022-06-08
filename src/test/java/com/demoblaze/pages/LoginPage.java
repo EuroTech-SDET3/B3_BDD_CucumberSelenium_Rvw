@@ -3,7 +3,6 @@ package com.demoblaze.pages;
 import com.demoblaze.utulities.BrowserUtils;
 import com.demoblaze.utulities.ConfigurationReader;
 import com.demoblaze.utulities.Driver;
-import io.cucumber.java.en_lol.WEN;
 import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebElement;

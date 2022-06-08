@@ -1,6 +1,6 @@
 Feature: Login Test-the user should be able to login with valid credential
 
-  Background:
+  Background: Go to home page
     Given the user is on the login page
 
 
