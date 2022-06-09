@@ -2,6 +2,7 @@ Feature: the user should be able to place order from the website
 
   Background: Go to home page
     Given the user is on the login page
+
 @purchase
     Scenario: Placing a successful order
       When the user enters "etsB3@gmail.com" and "Test123++" and click login button
@@ -11,6 +12,6 @@ Feature: the user should be able to place order from the website
       And the user adds "Apple monitor 24" from "Monitors"
       And the user removes "Sony vaio i5" from cart
       And the user places order and captures and log amount
-      #Then the user verifies purchase amount equals "expected"
+      Then the user verifies purchase amount equals 1900
 
 

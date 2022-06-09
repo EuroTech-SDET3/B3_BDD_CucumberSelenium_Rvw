@@ -20,10 +20,10 @@ public class ProductPage extends BasePage {
 
         public void addProduct_Method(String category, String product){
             WebElement categoryElm= Driver.get().findElement(By.xpath("//a[.='"+category+"']"));
-            BrowserUtils.waitForClickablility(categoryElm,3).click();
+            BrowserUtils.waitForClickablility(categoryElm,7).click();
             WebElement productElm=Driver.get().findElement(By.xpath("//a[.='"+product+"']"));
             BrowserUtils.scrollToElement(productElm);
-            BrowserUtils.waitForClickablility(productElm,3).click();
+            BrowserUtils.waitForClickablility(productElm,7).click();
             BrowserUtils.waitFor(1);
 
             addToCart_loc.click();

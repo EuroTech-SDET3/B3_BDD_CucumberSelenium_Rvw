@@ -49,6 +49,7 @@ public class LoginPage extends BasePage {
     public void loginWithParameter_method(String username,String password){
 
         BrowserUtils.waitForClickablility(loginHomePage_loc,2).click();
+        BrowserUtils.waitFor(2);
         login_Username_loc.sendKeys(username);
         login_Password_loc.sendKeys(password);
         loginButton_loc.click();

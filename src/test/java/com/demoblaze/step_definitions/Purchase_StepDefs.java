@@ -28,9 +28,10 @@ public class Purchase_StepDefs {
 
     }
 
-    @Then("the user verifies purchase amount equals {string}")
-    public void the_user_verifies_purchase_amount_equals(String string) {
 
+    @Then("the user verifies purchase amount equals {int}")
+    public void theUserVerifiesPurchaseAmountEquals(int expectedAmount) {
+
+        cartPage.verifyAmount_Method(expectedAmount);
     }
-
 }

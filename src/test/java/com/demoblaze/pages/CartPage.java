@@ -3,6 +3,7 @@ package com.demoblaze.pages;
 import com.demoblaze.utulities.BrowserUtils;
 import com.demoblaze.utulities.Driver;
 import com.github.javafaker.Faker;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -36,6 +37,12 @@ public class CartPage extends BasePage{
     @FindBy(xpath = "//button[.='Purchase']")
     public WebElement purchaseButton_loc;
 
+    @FindBy(css = ".lead.text-muted ")
+    public WebElement confirmation_loc;
+
+
+
+    int actualAmount;
 
 
 
@@ -70,12 +77,29 @@ public class CartPage extends BasePage{
 
 
     public void finishPurchase_Method(){
+        BrowserUtils.waitFor(2);
         placeOrderButton_loc.click();
+        BrowserUtils.waitFor(2);
         fillForm_Method();
+        BrowserUtils.waitFor(2);
         purchaseButton_loc.click();
+        BrowserUtils.waitFor(2);
+
+        String confirmationNum= confirmation_loc.getText();
+
+        String [] confirmationArray= confirmationNum.split("\n");
+
+        //String array1=confirmationArray[1].split(" ")[1];
+        actualAmount=Integer.parseInt(confirmationArray[1].split(" ")[1]);
+      //  System.out.println("array1 = " + array1);
+        System.out.println("amount = " + actualAmount);
 
 
-
+    }
+    public void verifyAmount_Method(int expectedAmount){
+        Assert.assertEquals(expectedAmount,actualAmount);
+        System.out.println("expectedAmount = " + expectedAmount);
+        System.out.println("actualAmount = " + actualAmount);
     }
 
 
