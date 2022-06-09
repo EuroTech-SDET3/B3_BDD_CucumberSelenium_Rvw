@@ -3,6 +3,8 @@ package com.demoblaze.pages;
 import com.demoblaze.utulities.BrowserUtils;
 import com.demoblaze.utulities.Driver;
 import com.github.javafaker.Faker;
+import static org.junit.Assert.*;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -97,9 +99,10 @@ public class CartPage extends BasePage{
 
     }
     public void verifyAmount_Method(int expectedAmount){
-        Assert.assertEquals(expectedAmount,actualAmount);
+        assertEquals(expectedAmount,actualAmount);
         System.out.println("expectedAmount = " + expectedAmount);
         System.out.println("actualAmount = " + actualAmount);
+
     }
 
 

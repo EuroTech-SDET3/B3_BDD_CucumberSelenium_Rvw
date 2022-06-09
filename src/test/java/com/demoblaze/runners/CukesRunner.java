@@ -18,8 +18,8 @@ import org.junit.runner.RunWith;
 
         features = "src/test/resources/features",
         glue = "com/demoblaze/step_definitions",
-        dryRun = true,
-        tags = "@purchase"
+        dryRun = false,
+        tags = "@wip"
 
 
 )
