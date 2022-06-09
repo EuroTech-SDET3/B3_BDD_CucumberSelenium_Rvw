@@ -51,3 +51,7 @@ Feature: Login Test-the user should be able to login with valid credential
       | etsB3            |                  | Please fill out Username and Password. |
       |                  |                  | Please fill out Username and Password. |
      # | etsB3            | 123              | password must be at least 8 characters |
+
+  Scenario: Encryption Test
+    When User enters encrypted credentials
+    Then verify "Welcome etsB3"

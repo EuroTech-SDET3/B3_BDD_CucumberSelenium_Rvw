@@ -39,13 +39,13 @@ public class LoginPage extends BasePage {
     }
 
     public void verifyLogin_Method(String expectedUsername){
+        BrowserUtils.waitFor(1);
         String actualUsername=welcomeUsername_loc.getText();
         Assert.assertEquals("username do NOT match",expectedUsername,actualUsername);
         System.out.println("expectedUsername = " + expectedUsername);
         System.out.println("actualUsername = " + actualUsername);
 
     }
-
     public void loginWithParameter_method(String username,String password){
 
         BrowserUtils.waitForClickablility(loginHomePage_loc,2).click();

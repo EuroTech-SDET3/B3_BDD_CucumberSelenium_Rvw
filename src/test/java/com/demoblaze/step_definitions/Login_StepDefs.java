@@ -3,6 +3,7 @@ package com.demoblaze.step_definitions;
 import com.demoblaze.pages.LoginPage;
 import com.demoblaze.utulities.ConfigurationReader;
 import com.demoblaze.utulities.Driver;
+import com.demoblaze.utulities.EncryptionUtils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -50,4 +51,13 @@ public class Login_StepDefs {
     }
 
 
+    @When("User enters encrypted credentials")
+    public void userEntersEncryptedCredentials() {
+
+        String username= EncryptionUtils.decrypt(ConfigurationReader.get("encryptedUsername"),System.getenv("secretKey"));
+        String password= EncryptionUtils.decrypt(ConfigurationReader.get("encryptedPassword"),System.getenv("secretKey"));
+        loginPage.loginWithParameter_method(username,password);
+
+
+    }
 }
