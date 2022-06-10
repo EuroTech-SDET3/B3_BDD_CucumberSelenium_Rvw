@@ -8,6 +8,8 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class LoginPage extends BasePage {
 
     @FindBy(id = "login2")
@@ -24,6 +26,10 @@ public class LoginPage extends BasePage {
 
     @FindBy(id = "nameofuser")
     public WebElement welcomeUsername_loc;
+
+    @FindBy(xpath = "//a[@id='itemc']") //3 adet element tutuyor
+    public List<WebElement> categoriesList;
+
 
 
     public void login_method() {

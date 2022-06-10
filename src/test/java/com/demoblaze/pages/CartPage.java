@@ -48,8 +48,6 @@ public class CartPage extends BasePage{
 
 
 
-
-
     public void removeProduct_Method(String product){
         cart_loc.click();
         BrowserUtils.waitFor(2);
