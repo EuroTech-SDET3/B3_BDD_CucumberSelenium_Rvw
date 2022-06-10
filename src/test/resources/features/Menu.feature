@@ -1,5 +1,5 @@
 Feature: Menu List
-  @menu
+
   Scenario: Verify Menu List
 
     #open the https://www.demoblaze.com/
@@ -13,3 +13,12 @@ Feature: Menu List
     |Phones|
     |Laptops|
     |Monitors|
+
+  @menu
+Scenario: Add new credential to the Configuration Properties
+
+  Given the user is on the login page
+  When the user enters valid credentials
+  And  the user get sony laptops name
+  Then the compiler adds laptops name to the Configuration Properties
+

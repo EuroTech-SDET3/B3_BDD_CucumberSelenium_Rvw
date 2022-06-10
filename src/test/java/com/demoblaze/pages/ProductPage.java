@@ -15,6 +15,9 @@ public class ProductPage extends BasePage {
     @FindBy (xpath = "(//a[@class='nav-link'])[1]")
     public WebElement homeLink_loc;
 
+    @FindBy(xpath = "//a[contains(text(),'Sony vaio i5')]")
+    public WebElement sonyLaptop;
+
 
 
 
